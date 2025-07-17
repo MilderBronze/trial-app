@@ -85,11 +85,11 @@ const ContactUsForm = () => {
             id="lastname"
             placeholder="Enter last name"
             className="form-style"
-            {...register("lastname")}
+            {...register("lastname", { required: true })}
           />
           {errors.lastname && (
             <span className="-mt-1 text-[12px] text-yellow-100">
-              please enter lastname
+              please enter lastname.
             </span>
           )}
         </div>
