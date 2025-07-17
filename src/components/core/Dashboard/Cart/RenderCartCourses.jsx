@@ -17,12 +17,12 @@ const RenderCartCourses = () => {
         cart.map((course, index) => (
             <div>
                 <div>
-                    <img src={course?.thumbnail} />
+                    <img src={course?.thumbnail} alt=''/>
                     <div>
                         <p>{course?.courseName}</p>
                         <p>{course?.category?.name}</p>
                         <div>
-                            <span>4.8</span>
+                            <span>rating</span>
                             <ReactStars
                                 count={5}
                                 size={20}
