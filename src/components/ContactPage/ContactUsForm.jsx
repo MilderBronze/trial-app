@@ -45,6 +45,7 @@ const ContactUsForm = () => {
       });
     }
   }, [reset, isSubmitSuccessful]);
+  // added reset function to the dependency list as well because sometimes you select a field in a form and then achanak se koi nayi element aa jaati hai form me and append ho jaati hai.. toh form ki structure toh change ho gyi na.. yani reset function ki definition change ho gayi. mai chahta hu jab bhi reset function ki definition change ho.. tab bhi ye useEffect execute ho.
 
   return (
     <form
