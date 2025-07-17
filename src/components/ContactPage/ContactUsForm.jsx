@@ -66,6 +66,8 @@ const ContactUsForm = () => {
             placeholder="Enter first name"
             className="form-style"
             {...register("firstname", { required: true })}
+            // jab vaildation me sirf required: true daale ho toh fiir toh kya hii error aa skta hai.. ki the user might had forgotten
+            // adding his name.. so prompt them to do so. and this job would come under error management.
           />
           {errors.firstname && (
             <span className="-mt-1 text-[12px] text-yellow-100">
@@ -76,7 +78,8 @@ const ContactUsForm = () => {
         <div className="flex flex-col gap-2 lg:w-[48%]">
           <label htmlFor="lastname" className="lable-style">
             Last Name
-          </label>
+          </label>{" "}
+          {/* id in the input tag below is just for linking the label to input... register consumes the name of the element */}
           <input
             type="text"
             name="lastname"
