@@ -27,11 +27,10 @@ const ContactUsForm = () => {
         data
       );
       // console.log("Email Res - ", res)
-      setLoading(false);
     } catch (error) {
       console.log("ERROR MESSAGE - ", error.message);
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -71,7 +70,7 @@ const ContactUsForm = () => {
           />
           {errors.firstname && (
             <span className="-mt-1 text-[12px] text-yellow-100">
-              Please enter your name.
+              Please enter firstname.
             </span>
           )}
         </div>
@@ -88,6 +87,11 @@ const ContactUsForm = () => {
             className="form-style"
             {...register("lastname")}
           />
+          {errors.lastname && (
+            <span className="-mt-1 text-[12px] text-yellow-100">
+              please enter lastname
+            </span>
+          )}
         </div>
       </div>
 
@@ -190,6 +194,11 @@ const ContactUsForm = () => {
       >
         Send Message
       </button>
+      {/* jaise hii send message pe click krenge.. button ka type toh submit hai yaani ki handleSubmit fn exec hoga and it contains
+      submitContactForm method.. so we are gonna write that now.
+      ab usko likhne ke liye uski functionality smjhni hogi..
+      kya krti hai ye button.. hamara form ka sara ka sara data kisi backend endpoint pe send kr rhe honge.
+      yani ki koi backend ki api honi chahiye. */}
     </form>
   );
 };
