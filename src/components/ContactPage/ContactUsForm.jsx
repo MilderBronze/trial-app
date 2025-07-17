@@ -52,6 +52,7 @@ const ContactUsForm = () => {
       className="flex flex-col gap-7"
       onSubmit={handleSubmit(submitContactForm)}
     >
+      {/* handleSubmit here is a method provision under RHF(react hook form)... you've gotta create a function and paas it to its arguments */}
       <div className="flex flex-col gap-5 lg:flex-row">
         <div className="flex flex-col gap-2 lg:w-[48%]">
           <label htmlFor="firstname" className="lable-style">
