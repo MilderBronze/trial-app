@@ -81,6 +81,12 @@ exports.getAverageRating = async (req, res) => {
       {
         $match: {
           course: new mongoose.Types.ObjectId(courseId),
+          /**
+           * This will fail: { course: "60c72b2f9b1d8c001f8e4b1a" }
+           * This will succeed: { course: ObjectId("60c72b2f9b1d8c001f8e4b1a") }
+           */
+          // the above casting is done because the table RatingAndReview contains course as a reference.
+          // so we typecasted courseId to an object which is quite logical tbh.
         },
       },
       {
