@@ -44,7 +44,11 @@ const EnrolledCourses = () => {
                 <img src={course.thumbnail} alt="" />
                 <div>
                   <p>{course.courseName}</p>
-                  <p>{course.courseDescription}</p>
+                  <p>
+                    {course.courseDescription.length > 50
+                      ? course.courseDescription.slice(0, 50) + "..."
+                      : course.courseDescription}
+                  </p>
                 </div>
               </div>
 
