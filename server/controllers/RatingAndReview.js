@@ -96,6 +96,7 @@ exports.getAverageRating = async (req, res) => {
         },
       },
     ]);
+    console.log("rating and review aggregate result: ", result);
 
     //return rating
     if (result.length > 0) {
